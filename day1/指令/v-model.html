@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--MVVM-->
+		<!--V-->
+		<div id="demo">
+			<p style="color: red;">1.input</p>
+			<p v-text="name" :style="{fontSize:num+'px'}"></p>
+			<!--$().val()-->
+			<input v-model="name" />
+			<input v-model="num" type="range" />
+
+			<p style="color: red;">2.select</p>
+			<!--$("select").val-->
+			<select v-model="name">
+				<option value="1">a</option>
+				<option value="2">b</option>
+				<option value="3">c</option>
+			</select>
+
+			<p style="color: red;">3.textarea</p>
+			<textarea v-model="name"></textarea>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#demo",
+				//M
+				data: {
+					name: "1",
+					num: 50
+				}
+			})
+		</script>
+	</body>
+
+</html>

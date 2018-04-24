@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <input v-model="name" />
+        <p>{{name|ing}}</p>
+        <p>{{price|currency}}</p>
+        <p>{{100000|currency}}</p>
+        <!-- 只能用在{{}}和v-text -->
+        <p>{{currency(price)}}</p>
+        <p :id="currency(price)"></p>
+    </div>
+    <!-- react -->
+    <script src="../../js/vue.js"></script>
+    <script>
+        Vue.filter('ing', function (value) {
+            // value是接受name
+            // 返回处理后的值
+            console.log(value)
+            // 过滤之后的结果
+            return value + "ing"
+        })
+        Vue.filter('currency', function (value) {
+            // value是接受name
+            // 返回处理后的值
+            console.log(value)
+            // 过滤之后的结果
+            return "￥" + value + ".00"
+        })
+        // 时间戳
+        new Vue({
+            el: "#demo",
+            data: {
+                price: 30,
+                name: "laoyao",
+                bool: true
+            },
+            methods: {
+                currency(price) {
+                    return "￥" + price + ".00"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

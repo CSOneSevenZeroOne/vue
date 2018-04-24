@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<p>{{name}}</p>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			//数据驱动
+			var data = {
+				name: "asdasdasdasd"
+			}
+			var vm = new Vue({
+				//作用域 querySelector
+				el: "#demo",
+				//数据模型
+				data: data
+			})
+			console.log(vm)
+			//V M
+			vm.name = "123"
+		</script>
+	</body>
+</html>

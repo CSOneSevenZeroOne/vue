@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			p{
+				height: 1px;
+			}
+			span{
+				height: 1px;
+				width: 1px;
+				display: inline-block;
+			}
+		</style>
+		<!--V-->
+		<div id="demo">
+			<p v-for="a in arr">
+				<span v-for="p in a" :style="{backgroundColor:'rgb('+p+')'}">&nbsp</span>
+			</p>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script src="../../js/jquery.js"></script>
+		<script>
+			//指令其实就是Vue自带的特殊属性值
+			var vm = new Vue({
+				el: "#demo",
+				//M
+				data: {
+					arr:[]
+				},
+				//执行一次
+				mounted(){
+					var self = this;
+					$.ajax({
+						type:"get",
+						url:"../../img/test.json",
+						async:true
+					}).done((data)=>{
+						self.arr = data.content
+						console.log(data)
+					});
+				}
+			})
+		</script>
+	</body>
+
+</html>

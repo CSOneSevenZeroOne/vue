@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--V-->
+		<div id="demo">
+			<p v-text="name"></p>
+			<!--
+				v-repeat -> v-for
+				$().attr()
+				:xxxx   ->  v-bind:xxxx
+				:name  -> name="{{}}"
+			-->
+			<p :name="name" v-bind:kk="name">123</p>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#demo",
+				//M
+				data: {
+					name:"ll"
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style>
+			.blue{
+				color: blue;
+			}
+			
+			.size{
+				font-size: 50px;
+			}
+		</style>
+		<!--V-->
+		<div id="demo">
+			<p v-bind:style="obj">123</p>
+			<p v-bind:class="{
+				blue:bool,
+				size:!true
+			}">123</p>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			//el.style.fontSize = "xx px"
+			new Vue({
+				el: "#demo",
+				//M
+				data: {
+					obj:{
+						color:"red",
+						fontSize: "50px"
+					},
+					bool:true
+				}
+			})
+		</script>
+	</body>
+</html>

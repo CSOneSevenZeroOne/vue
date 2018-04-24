@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <input v-model="name" />
+        <p ref="abc">{{name}}</p>
+        <button @click="bool=!bool">切换组件状态</button>
+        <test v-if="bool" />
+    </div>
+    <script src="../../../js/vue.js"></script>
+    <script>
+        // 编译-》挂载-》更新-》销毁
+        Vue.component("test",{
+            template:`
+                <div>测试组件</div>
+            `,
+            beforeDestroy(){
+                console.log("销毁之前")
+                console.log(this.$data)
+                // console.log(document.querySelector(".weui-tabbar"))
+                console.log(this.$el)
+                alert("------------beforeDestroy------------")
+            },
+            destroyed(){
+                console.log("销毁之后")
+                console.log(this.$data)
+                // console.log(document.querySelector(".weui-tabbar"))
+                console.log(this.$el)
+                alert("------------destroyed------------")
+            }
+        })
+        // v-if v-show
+        // 生命周期
+        // 双向数据绑定
+        // MVVM
+        // 组件化的实现
+        // 模块化的实现
+        new Vue({
+            el: "#demo",
+            data: {
+                name: "laoyao",
+                bool: true
+            },
+            // template:`
+            //     <p ref="abc">{{name}}</p>
+            // `,
+            // <p>laoyao</p>
+            beforeCreate() {
+                console.log("------------beforeCreate------------")
+                console.log("编译前")
+                console.log(this.$data)
+                // console.log(document.querySelector(".weui-tabbar"))
+                console.log(this.$el)
+                //alert("编译前")
+            },
+            created() {
+                console.log("------------created------------")	
+                console.log("编译之后")
+                console.log(this.$data)
+                // console.log(document.querySelector(".weui-tabbar"))
+                console.log(this.$el)
+                //alert("编译之后")
+
+            },
+            beforeMount() {
+                console.log("------------beforeMounted------------")
+                console.log("挂载之前")
+                console.log(this.$data)
+                // console.log(document.querySelector(".weui-tabbar"))
+                console.log(this.$el)
+                //alert("挂载之前")
+            },
+            // mounted之后才生成html结构
+            mounted() {
+                console.log("------------mounted------------")
+                console.log("挂载之后")
+                console.log(this.$data)
+                // console.log(document.querySelector(".weui-tabbar"))
+                console.log(this.$el)
+                //alert("挂载之后")
+            },
+            beforeUpdate() {
+                console.log("------------beforeUpdate------------")
+                console.log(this.$data)
+                // console.log(document.querySelector(".weui-tabbar"))
+                console.log(this.$el)
+                //alert("挂载之后")
+                console.log("更新之前")
+            },
+            updated() {
+                console.log("------------updated------------")
+                console.log(this.$data)
+                // console.log(document.querySelector(".weui-tabbar"))
+                console.log(this.$el)
+                //alert("挂载之后")
+                console.log("更新之后")
+            }
+        })
+    </script>
+</body>
+
+</html>

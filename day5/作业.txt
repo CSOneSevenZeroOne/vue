@@ -1,0 +1,5 @@
+https://vuex.vuejs.org/zh-cn/state.html
+https://github.com/Wscats/vue-tutorial/issues/12
+
+//爱范儿
+//

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--V-->
+		<div id="demo">
+			<ul>
+				<li v-for="a in arr" v-text="a.name+a.age"></li>
+			</ul>
+			<!--$().on("",()=>{})-->
+			<button v-on:click="loadmore">获取更多</button>
+			<!--
+				onclick->@click
+				onkeyup->@keyup
+				onchange->@change
+			-->
+			<button @click="loadmore">获取更多</button>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#demo",
+				//func
+				methods: {
+					loadmore() {
+						//ajax
+						this.arr.push({
+							name: "kkk",
+							age: 77
+						})
+					}
+				},
+				//M
+				data: {
+					arr: [{
+						name: "ly",
+						age: 10
+					}, {
+						name: "lz",
+						age: 6
+					}, {
+						name: "ll",
+						age: 12
+					}]
+				}
+			})
+		</script>
+	</body>
+
+</html>

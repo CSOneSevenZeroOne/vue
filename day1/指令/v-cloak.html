@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<div id="demo">
+			<p v-cloak>{{name}}</p>
+			<p v-cloak>{{name}}</p>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#demo",
+				//M
+				data: {
+					name: "abc",
+				}
+			})
+		</script>
+	</body>
+
+</html>

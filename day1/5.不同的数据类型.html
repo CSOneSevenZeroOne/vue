@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<p style="color: red;">1.字符串</p>
+			<p>{{name}}</p>
+			
+			<p style="color: red;">2.数字</p>
+			<p>{{age}}</p>
+			
+			<p style="color: red;">3.布尔值</p>
+			<p>{{bool}}</p>
+			<p>{{bool?"zhen":"jia"}}</p>
+			
+			<p style="color: red;">4.数组</p>
+			<p>{{arr}}</p>
+			<p>{{arr[0]}} {{arr[1]}} {{arr[2]}}</p>
+			
+			<p style="color: red;">5.对象</p>
+			<p>{{people}}</p>
+			<p>性别:{{people.sex}}</p>
+			<p>{{people.height}}cm</p>
+			
+			<p style="color: red;">6.函数</p>
+			<p>{{test(age)}}</p>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			new Vue({
+				//作用域 querySelector
+				el: "#demo",
+				//数据模型
+				data: {
+					html:"<p>123</p>",
+					name:"ly",
+					age:18,
+					bool:true,
+					arr:["a","b","c"],
+					people:{
+						sex:"女",
+						height:"168",
+					},
+				},
+				methods:{
+					test:function(num){
+						return 	num+2
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

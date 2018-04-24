@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p></p>
+		<script src="../js/jquery.js"></script>
+		<script>
+			//空换时
+			//空间换时间
+			//时间换空间
+			var num = 1;
+			var p = $("p");
+			
+			/*window.cookie = ""
+			window.cookie = ""
+			window.cookie = ""*/
+			p.text(num);
+			setInterval(()=>{
+				p.text(num++);
+			},1000)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="demo">
+			<p style="color:red">1.v-text</p>
+			<!--$().text()-->
+			<p>{{name}}</p>
+			<p v-text="name"></p>
+			<p v-text="'name'"></p>
+			<p v-text="bool?'zhen':'jia'"></p>
+
+			<p style="color:red">2.v-html</p>
+			<div v-text="html"></div>
+			<!--$().html()-->
+			<div v-html="html"></div>
+			<div v-html></div>
+
+			<p style="color:red">3.v-show 频繁切换状态用show</p>
+			<!--选项卡   show或者hide-->
+			<!--$().show() $().hide()-->
+			<p v-show="!bool">显示或者隐藏</p>
+			<p v-show="1<3">显示或者隐藏</p>
+
+			<p style="color:red">4.v-if 频繁切换状态用if</p>
+			<!--$().append()或$().remove()-->
+			<p v-if="!bool">增加或删除</p>
+
+			<p style="color:red">5.v-else</p>
+			<p v-if="!bool">1</p>
+			<p v-else>2</p>
+
+			<p v-if="!bool">1</p>
+			<p v-if="bool">2</p>
+
+			<p style="color:red">6.v-else-if</p>
+			<div v-if="type === 'A'">
+				A
+			</div>
+			<div v-else-if="type === 'B'">
+				B
+			</div>
+			<div v-else-if="type === 'C'">
+				C
+			</div>
+			<div v-else>
+				Not A/B/C
+			</div>
+			
+			<p style="color:red">7.v-for</p>
+			<p>{{arr[0].name}}</p>
+			<p>{{arr[1].name}}</p>
+			<p>{{arr[2].name}}</p>
+			<!--for in-->
+			<ul>
+				<li v-for="a in arr" v-text="'名字'+a.name+' 年龄'+a.age"></li>
+			</ul>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			//指令其实就是Vue自带的特殊属性值
+			new Vue({
+				el: "#demo",
+				//M
+				data: {
+					name: "ly",
+					bool: true,
+					//富文本编辑器
+					html: "<p>123<span style='color:blue'>456</span>789</p>",
+					type: "E",
+					arr: [{
+						name: "ly",
+						age: 10
+					}, {
+						name: "lz",
+						age: 6
+					}, {
+						name: "ll",
+						age: 12
+					}]
+				}
+			})
+		</script>
+	</body>
+
+</html>

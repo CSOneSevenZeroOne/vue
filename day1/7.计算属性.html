@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="demo">
+			<p>{{name}}</p>
+			<p>{{age}}</p>
+			<p>{{str}}</p>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				computed: {
+					age: function() {
+						return 1 + 17
+					},
+					str(){
+						return this.name + "ing"
+					}
+				},
+				//作用域 querySelector
+				el: "#demo",
+				//数据模型
+				data: {
+					//age:18
+					name: "see"
+				}
+			})
+		</script>
+	</body>
+
+</html>

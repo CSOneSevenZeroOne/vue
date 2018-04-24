@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="demo">
+			<table border="1">
+				<thead>
+					<tr>
+						<th>年龄</th>
+						<th>名字</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="a in arr">
+						<th>{{a.age}}</th>
+						<th>{{a.name}}</th>
+					</tr>
+				</tbody>
+			</table>
+			
+			<select>
+				<option v-for="a in arr" v-text="a.name" :value="a.age"></option>
+			</select>
+			
+			<p v-for="a in arr">{{a.name}} {{a.age}}</p>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#demo",
+				//M
+				data: {
+					arr: [{
+						name: "ly",
+						age: 10
+					}, {
+						name: "lz",
+						age: 6
+					}, {
+						name: "ll",
+						age: 12
+					}]
+				}
+			})
+		</script>
+	</body>
+
+</html>

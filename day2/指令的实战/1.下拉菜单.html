@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/bootstrap.css" />
+	</head>
+
+	<body>
+		<div id="demo" class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="btn-group">
+						<button @click="showMenu" class="btn btn-default">动作</button>
+						<button @click="showMenu" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+							<span class="caret"></span>
+						</button>
+						<ul :style="{display:bool?'block':'none'}" class="dropdown-menu">
+							<li>
+								<a rel="nofollow" href="#">操作</a>
+							</li>
+							<li class="disabled">
+								<a rel="nofollow" href="#">禁止操作</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a rel="nofollow" href="#">更多设置</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#demo",
+				data:{
+					bool:false
+				},
+				methods:{
+					showMenu(){
+						this.bool = !this.bool
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

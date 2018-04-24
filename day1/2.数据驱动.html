@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--View   V-->
+		<div id="demo">
+			<p>{{name}}</p>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			//$("p").text(n)   n
+			//数据驱动
+			var data = {
+				name: "asdasdasdasd"
+			}
+			new Vue({
+				//作用域 querySelector
+				el: "#demo",
+				//数据模型 model   M
+				data: data
+			})
+			setTimeout(function() {
+				data.name = "bbbbbbbb"
+			}, 2000)
+			
+			//数据驱动
+			//M->V
+			//节点驱动
+			//E->V
+		</script>
+	</body>
+</html>

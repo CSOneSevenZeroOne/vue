@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="demo"></div>
+		<script src="../js/vue.js"></script>
+		<script>
+			//数据驱动
+			new Vue({
+				//作用域 querySelector
+				el: "#demo",
+				//数据模型
+				data: {
+					name: "asdasdasdasd",
+					tag:"h4"
+				},
+				render(createElement) {
+					return createElement(this.tag, {
+						attrs: {
+							id: 'foo'
+						},
+					}, [this.name, createElement("span", null, "456"),createElement("span", null, "789")])
+				}
+			})
+		</script>
+	</body>
+
+</html>

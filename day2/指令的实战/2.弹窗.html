@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/bootstrap.css" />
+	</head>
+
+	<body>
+		<div id="demo" class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<a rel="nofollow" id="modal-583533" href="#modal-container-583533" role="button" class="btn" data-toggle="modal">触发弹窗</a>
+					<div class="modal fade" id="modal-container-583533" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<h4 class="modal-title" id="myModalLabel">
+								标题
+							</h4>
+								</div>
+								<div class="modal-body">
+									这里是弹窗的内容
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#demo",
+				data: {
+					bool: false
+				},
+				methods: {
+					showMenu() {
+						this.bool = !this.bool
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

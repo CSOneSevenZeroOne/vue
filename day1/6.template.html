@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--V-->
+		<div id="demo">
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			new Vue({
+				//作用域 querySelector
+				el: "#demo",
+				//模板
+				template: `
+					<div>
+						<p>{{name}}</p>
+						<p>{{age}}</p>
+					</div>
+				`,
+				//数据模型  M
+				data: {
+					name: "abc",
+					age: 18
+				}
+			})
+		</script>
+	</body>
+</html>

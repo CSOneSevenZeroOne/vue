@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="demo">
+			<p style="color: red;">1.最简答的模板语法</p>
+			<!--$().text()-->
+			<p>名字:{{name}}</p>
+			<p>年龄:{{age}}</p>
+
+			<p style="color: red;">2.输出html</p>
+			<!--$().html()-->
+			<div>{{html}}</div>
+			<div v-html="html"></div>
+
+			<p style="color: red;">3.表达式 一元 二元 三元</p>
+			<p>一元:{{!bool}}</p>
+			<p>二元:{{age+90}}</p>
+			<p>三元:{{bool?(1>3?"1":"2"):"假"}}</p>
+			
+			<p style="color: red;">4.操作属性</p>
+			<!--$().attr()  $().css()  $().show()  $().hide()-->
+			<p :id="name">属性值</p>
+			<button :disabled="bool">OK</button>
+			<p :oooooo="name" :asdasdasdasd="html">{{name}}</p>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				//作用域 querySelector
+				el: "#demo",
+				//数据模型
+				data: {
+					name: "ly",
+					age: 18,
+					html: "<p>123<span>456</span>789</p>",
+					bool:true
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,8 @@
+1.今日头条首页    v-for   使用今天指令  v-if  v-else-if  v-else
+
+v-text
+v-for->v-show
+	v-for
+		v-if
+		v-else-if
+		v-else

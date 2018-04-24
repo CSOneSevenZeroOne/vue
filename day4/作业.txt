@@ -1,0 +1,4 @@
+1.单文件.vue实现今日头条
+2.<p>123456</p>    input->2
+----compted--->
+<p>1<span style="color:red">2</span>3456</p>

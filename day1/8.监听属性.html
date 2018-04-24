@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--V-->
+		<div id="demo">
+			<p>{{num}}</p>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			//数据驱动
+			var vm = new Vue({
+				//作用域 querySelector
+				el: "#demo",
+				//数据模型  M
+				data: {
+					num: 1,
+					age:18
+				},
+				watch: {
+					//监听name   只要这个值发生了变化，就会执行这个回调函数
+					num(){
+						console.log(this.num)
+					},
+					age(){
+						
+					}
+				}
+			})
+			setInterval(() => {
+				vm.num++
+			}, 1000)
+		</script>
+	</body>
+</html>
